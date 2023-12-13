@@ -29,11 +29,38 @@ Para realziar el anális de sentiminento es necesaria la libreria **nltk**
 pip install nltk
 ```
 > [!Tip]
-> Esta libreria junto con todas las necesarias se cargan en requirements.txt
+> Esta libreria junto con todas las necesarias se cargan en el archivo **requirements.txt**
 > Pero recordemos que se debe ejecutar el comando:
 > ```python
 >pip freeze > requirements.txt
 > ```
+
+## 3.- Desarrollo de API
+Disponibilizamos los datos de la empresa usando el framework FastAPI + Render.
+En donde podremos realizar diversas consultas, pero antes de eso debemos realziar algunos pasos para que sea mas eficiente y rápido el desarrollo de esta.
+
+### Pasos
+
+### 3.1) Creamos el entorno virtual:
+
+Pasos para poder correr la FastAPI:
+
++ Se recomienda instalar un entorno virtual en tu computador local.
+--> python -m venv Nombre del entorno virtual
+
++ Se activa el entorno (API_Recomendacion)
+--> nombre\Scripts\activate
+
++ Se instala FastAPI
+--> pip install "fastapi[all]"
+
++ Nos dirigimos a la ruta de nuestro archivo main.py
+
++ llamammos a nuestro archivo de FastAPI7
+-->  uvicorn main:app --reload
+  > [!Tip]
+  > uvicorn nombre_archvio:nombre de instancia (o tambien llamada aplicacion) --reload
+
 
 > [!Warning]
 > Estos es una nota
