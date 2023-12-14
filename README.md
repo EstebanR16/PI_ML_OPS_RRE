@@ -39,29 +39,76 @@ pip install nltk
 Disponibilizamos los datos de la empresa usando el framework FastAPI + Render.
 En donde podremos realizar diversas consultas, pero antes de eso debemos realziar algunos pasos para que sea mas eficiente y rápido el desarrollo de esta.
 
-### Pasos
+### Pasos:
 
 ### 3.1) Creamos el entorno virtual:
 
 Pasos para poder correr la FastAPI:
 
 + Se recomienda instalar un entorno virtual en tu computador local.
+
 --> python -m venv Nombre del entorno virtual
 
 + Se activa el entorno (API_Recomendacion)
+
 --> nombre\Scripts\activate
 
 + Se instala FastAPI
+
 --> pip install "fastapi[all]"
 
 + Nos dirigimos a la ruta de nuestro archivo main.py
 
-+ llamammos a nuestro archivo de FastAPI7
++ llamamos a nuestro archivo de FastAPI
+
 -->  uvicorn main:app --reload
-  > [!Tip]
-  > uvicorn nombre_archvio:nombre de instancia (o tambien llamada aplicacion) --reload
+    > uvicorn nombre_archvio:nombre de instancia (o tambien llamada aplicacion) --reload
 
+### 3.2) Archivos necesarios del repositorio (GitHub)
 
++ Creacion de archivos
+```
+touch .gitignore
+touch main.py
+touch requirements.txt
+```
+> [!Note]
+> El archivo main.py es el que contiene la lógica de nuestro sistema de recomendación (Nuesta **APP**)
+
+### 3.3) Entorno virtual dentro de .gitignore
+
+Vamos a poner el nombre del entorno virtual que creamos anteriormente en el archivo .gitignore:
+```
+/nombre_entorno/
+```
+> [!Tip]
+> Se abre el archivo con cualquier editor de textos y guardar manualmente
+
+### 3.4) Inizializar Git
+
+La ruta en donde se crearon los archivos (en la consola de Git bash) es la misma que en donde esta el archivo ***main.py***
+```
+git init
+pip install uvicorn
+pip install fastapi
+```
+
++ Descarga de librerias
+
+```
+pip freeze > requirements.txt
+```
+> [!Note]
+> Se van a cargar todas las librerias que estan dentro de ***main.py*** y además siempre que utilicemos alguna nueva se tiene ejectuar nuevamente
+
++ Instalar dependencias desde 'requirements.txt'
+Una vez que el entorno virtual está activado, ejecuta el siguiente comando para instalar las dependencias listadas en requirements.txt:
+```
+pip install -r requirements.txt
+```
+Este comando instalará todas las librerías y versiones especificadas en requirements.txt dentro del entorno virtual activado.
+
+  
 > [!Warning]
 > Estos es una nota
 
