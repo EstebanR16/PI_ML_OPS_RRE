@@ -84,7 +84,7 @@ Vamos a poner el nombre del entorno virtual que creamos anteriormente en el arch
 > [!Tip]
 > Se abre el archivo con cualquier editor de textos y guardar manualmente
 
-### 3.4) Inizializar Git
+### 3.4) Inizializar Git (consola Git bash)
 
 La ruta en donde se crearon los archivos (en la consola de Git bash) es la misma que en donde esta el archivo ***main.py***
 ```
@@ -101,12 +101,21 @@ pip freeze > requirements.txt
 > [!Note]
 > Se van a cargar todas las librerias que estan dentro de ***main.py*** y además siempre que utilicemos alguna nueva se tiene ejectuar nuevamente
 
+### 3.5) Entorno virtual (cmd)
+
+Si ya has creado tu entorno virtual, actívalo utilizando el comando correspondiente según tu sistema operativo.
+```
+API_Recomendacion\Scripts\activate
+```
+
 + Instalar dependencias desde 'requirements.txt'
 Una vez que el entorno virtual está activado, ejecuta el siguiente comando para instalar las dependencias listadas en requirements.txt:
 ```
 pip install -r requirements.txt
 ```
 Este comando instalará todas las librerías y versiones especificadas en requirements.txt dentro del entorno virtual activado.
+
+
 
   
 > [!Warning]
