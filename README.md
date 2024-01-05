@@ -4,7 +4,7 @@
 
 Steam es una plataforma multinacional de videojuegos, del cuaul necesitamos crear un sistema de recomendacion de videojuegos para usuarios.
 
-### 1.- Ingesta de datos y Transformaciones
+## 1.- Ingesta de datos y Transformaciones
 Se cargan todas (o la mayoria) de las librerias que vamos a utilziar a lo largo del desarrollo del programa, y ademas cargamos nuestros set de datos (que estan en formato JSON).
 
 > [!Note]
@@ -12,7 +12,7 @@ Se cargan todas (o la mayoria) de las librerias que vamos a utilziar a lo largo 
 
 Por necesidades del cliente **no se requiere realizar transformaciones** ya que necesitamos consumir los datos tal y como se descargan de nuestra fuente (API).
 
-### 2.- Feature Engineering
+## 2.- Feature Engineering
 
 En el dataset user_reviews se incluyen reseñas de juegos hechos por distintos usuarios. Creamos la columna 'sentiment_analysis' aplicando análisis de sentimiento con _NLP_ con la siguiente escala: 
 
@@ -100,9 +100,18 @@ Si ya has creado tu entorno virtual, actívalo utilizando el comando correspondi
         cd Desktop\.......
 
 + Vamos a activar nuestro entorno virtual (en el path  donde lo creamos)
-    ```
-    API_Recomendacion\Scripts\activate
-    ```    
+
+  En Windows:
+  
+            ```
+            API_Recomendacion\Scripts\activate
+            ```
+        
+  En sistemas basados en Unix:
+  
+          ```
+            source API_Recomendacion\bin\activate
+          ``` 
 + Se instala FastAPI
 
         pip install "fastapi[all]"
@@ -148,7 +157,56 @@ Una vez que el entorno virtual está activado, ejecuta el siguiente comando para
 
   
 > [!Warning]
-> Estos es una nota
+> Si al instalar ***requirements.txt*** se muestra alguna descarga incompleta es posible que se deba desgar anteriormente la paqueteria correspondiente.
+
+### 3.6) Probar la API:
+Una vez que la aplicación esté en ejecución, abre tu navegador y ve a:
+
+http://127.0.0.1:8000/docs. 
+
+Esto abrirá la interfaz de documentación interactiva de FastAPI (Swagger). Aquí puedes probar tus endpoints directamente desde el navegador.
+
+
+## 4.- Git y Commit.
+
+Después de realizar cambios, utiliza los siguientes comandos para agregar y confirmar tus cambios en Git:
+
+        git add .
+        git commit -m "Descripción de los cambios"
+        
+## 5.- GitHub
+
+Asegúrate de que tu repositorio esté alojado en GitHub y de que hayas realizado el primer 'push':
+
+        git remote add origin URL_DEL_REPO
+        git branch -M main
+        git push -u origin main
+## 6.- Render
+
+### 6.1) Configuración en Render:
+
+Accede a tu cuenta en Render y crea un nuevo servicio.
+Configura el servicio para que apunte a tu repositorio de GitHub y especifique el archivo main.py como punto de entrada.
+
+### 6.2) Entorno Virtual en Render:
+
+Asegúrate de que Render ejecute los comandos necesarios para activar tu entorno virtual y ejecutar tu aplicación. Esto podría ser algo así como:
+
+        bash -c "source venv/bin/activate && uvicorn main:app --host 0.0.0.0 --port $PORT"
+
+## 7.- Despliegue
+
+### 7.1) Despliegue en Render:
+
+Realiza un despliegue manual desde la interfaz de Render o espera a que Render lo haga automáticamente cuando detecte cambios en tu repositorio.
+
+### 7.2) Verificación:
+
+Accede a la URL proporcionada por Render para verificar que tu aplicación FastAPI está funcionando correctamente en producción.
+
+
+
+
 
 > [!Caution]
 > Estos es una nota
