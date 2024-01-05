@@ -101,17 +101,17 @@ Si ya has creado tu entorno virtual, actívalo utilizando el comando correspondi
 
 + Vamos a activar nuestro entorno virtual (en el path  donde lo creamos)
 
-  En Windows:
+  > En Windows:
   
-            ```
-            API_Recomendacion\Scripts\activate
-            ```
+    ```
+    API_Recomendacion\Scripts\activate
+    ```
         
-  En sistemas basados en Unix:
+  > En sistemas basados en Unix:
   
-          ```
-            source API_Recomendacion\bin\activate
-          ``` 
+  ```
+    source API_Recomendacion\bin\activate
+  ``` 
 + Se instala FastAPI
 
         pip install "fastapi[all]"
@@ -152,7 +152,7 @@ Una vez que el entorno virtual está activado, ejecuta el siguiente comando para
         result = PlayTimeGenre(genero)
         return {"result": result}
 ```
-    Tenemos un archivo llamado "API_Transform.py" el cual contiene verdaderamente toda la logica de nuestras funciones de consulta de la API
+> Tenemos un archivo llamado "API_Transform.py" el cual contiene verdaderamente toda la logica de nuestras funciones de consulta de la API
 
 
   
