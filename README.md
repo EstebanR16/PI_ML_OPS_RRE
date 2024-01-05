@@ -41,28 +41,18 @@ En donde podremos realizar diversas consultas, pero antes de eso debemos realzia
 
 ### Pasos:
 
-### 3.1) Creamos el entorno virtual:
+### 3.1) Creamos el entorno virtual (cmd):
 
 Pasos para poder correr la FastAPI:
 
 + Se recomienda instalar un entorno virtual en tu computador local.
 
---> python -m venv Nombre del entorno virtual
+        python -m venv Nombre del entorno virtual
 
 + Se activa el entorno (API_Recomendacion)
 
---> nombre\Scripts\activate
+        nombre\Scripts\activate
 
-+ Se instala FastAPI
-
---> pip install "fastapi[all]"
-
-+ Nos dirigimos a la ruta de nuestro archivo main.py
-
-+ llamamos a nuestro archivo de FastAPI
-
--->  uvicorn main:app --reload
-    > uvicorn nombre_archvio:nombre de instancia (o tambien llamada aplicacion) --reload
 
 ### 3.2) Archivos necesarios del repositorio (GitHub)
 
@@ -104,17 +94,56 @@ pip freeze > requirements.txt
 ### 3.5) Entorno virtual (cmd)
 
 Si ya has creado tu entorno virtual, actívalo utilizando el comando correspondiente según tu sistema operativo.
-```
-API_Recomendacion\Scripts\activate
-```
+
++ Nos dirigimos a la ruta de nuestro archivo main.py
+
+        cd Desktop\.......
+
++ Vamos a activar nuestro entorno virtual (en el path  donde lo creamos)
+    ```
+    API_Recomendacion\Scripts\activate
+    ```    
++ Se instala FastAPI
+
+        pip install "fastapi[all]"
+> [!Tip]
+> Aquí tambien vamos a poder cargar todas las paqueterias que sean necesarias para que funcione nuestro archivo **main.py**, con el comando:
+>     ```pip install nombre_paqueteria```
 
 + Instalar dependencias desde 'requirements.txt'
 Una vez que el entorno virtual está activado, ejecuta el siguiente comando para instalar las dependencias listadas en requirements.txt:
-```
-pip install -r requirements.txt
-```
-Este comando instalará todas las librerías y versiones especificadas en requirements.txt dentro del entorno virtual activado.
+    ```
+    pip install -r requirements.txt
+    ```
+    > Este comando instalará todas las librerías y versiones especificadas en **requirements.txt** dentro del entorno virtual activado.
 
++ llamamos a nuestro archivo de FastAPI
+
+      uvicorn main:app --reload
+  
+    > uvicorn nombre_archvio:nombre de instancia (o tambien llamada aplicacion) --reload
+
+> [!Note]
+> Esta es la estructura general del archivo ***main.py***
+
+```python
+    from API_Transform import PlayTimeGenre, UserForGenre, UsersRecommend, UsersWorstDeveloper, Sentiment_analysis
+    from fastapi import FastAPI
+    
+    app_recomendacion = FastAPI()
+    
+    # Importacion de funciones: 
+    
+    @app_recomendacion.get("/")
+    def read_root():
+        return {"message": "¡Bienvenido a la API de Recomendaciones!"}
+    
+    @app_recomendacion.get("/playtime-genre/{genero}")
+    def read_playtime_genre(genero: str):
+        result = PlayTimeGenre(genero)
+        return {"result": result}
+```
+    Tenemos un archivo llamado "API_Transform.py" el cual contiene verdaderamente toda la logica de nuestras funciones de consulta de la API
 
 
   
