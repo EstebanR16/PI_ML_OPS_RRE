@@ -74,7 +74,7 @@ Vamos a poner el nombre del entorno virtual que creamos anteriormente en el arch
 > [!Tip]
 > Se abre el archivo con cualquier editor de textos y guardar manualmente
 
-### 3.4) Inizializar Git (consola Git bash)
+### 3.4) Inizializar Git (desde terminal VSCode)
 
 La ruta en donde se crearon los archivos (en la consola de Git bash) es la misma que en donde esta el archivo ***main.py***
 ```
@@ -83,11 +83,6 @@ pip install uvicorn
 pip install fastapi
 ```
 
-+ Descarga de librerias
-
-```
-pip freeze > requirements.txt
-```
 > [!Note]
 > Se van a cargar todas las librerias que estan dentro de ***main.py*** y además siempre que utilicemos alguna nueva se tiene ejectuar nuevamente
 
@@ -118,6 +113,13 @@ Si ya has creado tu entorno virtual, actívalo utilizando el comando correspondi
 > [!Tip]
 > Aquí tambien vamos a poder cargar todas las paqueterias que sean necesarias para que funcione nuestro archivo **main.py**, con el comando:
 >     ```pip install nombre_paqueteria```
+
++ Descarga de librerias
+Una vez que ya están todas las librerías descargadas en nuestro entorno virtual, podemos hacer el freeze de los requirements.
+
+    ```
+      pip freeze > requirements.txt
+    ```
 
 + Instalar dependencias desde 'requirements.txt'
 Una vez que el entorno virtual está activado, ejecuta el siguiente comando para instalar las dependencias listadas en requirements.txt:
