@@ -115,24 +115,27 @@ Si ya has creado tu entorno virtual, actívalo utilizando el comando correspondi
 >     ```pip install nombre_paqueteria```
 
 + Descarga de librerias
-Una vez que ya están todas las librerías descargadas en nuestro entorno virtual, podemos hacer el freeze de los requirements.
 
-    ```
-      pip freeze > requirements.txt
-    ```
+Una vez que ya están todas las librerías descargadas en nuestro entorno virtual, podemos hacer el freeze de los requirements, para generar un archivo requirements.txt basado en las bibliotecas instaladas actualmente en tu entorno virtual.
 
-+ Instalar dependencias desde 'requirements.txt'
-Una vez que el entorno virtual está activado, ejecuta el siguiente comando para instalar las dependencias listadas en requirements.txt:
-    ```
-    pip install -r requirements.txt
-    ```
-    > Este comando instalará todas las librerías y versiones especificadas en **requirements.txt** dentro del entorno virtual activado.
+```
+pip freeze > requirements.txt
+```
+>[!Warning]
+>Instalar dependencias desde 'requirements.txt' (es para simular le mismo entorno)
+>Una vez que el entorno virtual está activado, ejecuta el siguiente comando para instalar las dependencias listadas en requirements.txt:
+> ```
+>pip install -r requirements.txt
+>```
+> > Este comando instalará todas las librerías y versiones especificadas en **requirements.txt** dentro del entorno virtual activado.
 
 + llamamos a nuestro archivo de FastAPI
 
+Estamos inicializando el servidor de FasAPI.
+
       uvicorn main:app --reload
   
-    > uvicorn nombre_archvio:nombre de instancia (o tambien llamada aplicacion) --reload
+> uvicorn nombre_archvio:nombre de instancia (o tambien llamada aplicacion) --reload
 
 > [!Note]
 > Esta es la estructura general del archivo ***main.py***
@@ -159,7 +162,7 @@ Una vez que el entorno virtual está activado, ejecuta el siguiente comando para
 
   
 > [!Warning]
-> Si al instalar ***requirements.txt*** se muestra alguna descarga incompleta es posible que se deba desgar anteriormente la paqueteria correspondiente.
+> Si al instalar ***requirements.txt*** se muestra alguna descarga incompleta es posible que se deba a una actualizacion del archivo ***main.py*** y deba descargar la paqueteria correspondiente.
 
 ### 3.6) Probar la API:
 Una vez que la aplicación esté en ejecución, abre tu navegador y ve a:
