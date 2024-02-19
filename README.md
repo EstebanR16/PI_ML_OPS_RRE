@@ -4,6 +4,15 @@
 
 Steam es una plataforma multinacional de videojuegos, del cuaul necesitamos crear un sistema de recomendacion de videojuegos para usuarios.
 
+Fentes de informacion y documentacion: 
+
+https://github.com/HX-FNegrete/render-fastapi-tutorial 
+
+https://fastapi.tiangolo.com/
+
+https://dashboard.render.com/web/new
+
+
 ## 1.- Ingesta de datos y Transformaciones
 Se cargan todas (o la mayoria) de las librerias que vamos a utilziar a lo largo del desarrollo del programa, y ademas cargamos nuestros set de datos (que estan en formato JSON).
 
@@ -53,6 +62,9 @@ Pasos para poder correr la FastAPI:
 
         nombre\Scripts\activate
 
++ Para desactivar el entorno virtual
+
+        deactivate 
 
 ### 3.2) Archivos necesarios del repositorio (GitHub)
 
@@ -131,7 +143,7 @@ pip freeze > requirements.txt
 
 + llamamos a nuestro archivo de FastAPI
 
-Estamos inicializando el servidor de FasAPI.
+Inicializar el servidor de FasAPI.
 
       uvicorn main:app --reload
   
@@ -190,14 +202,31 @@ Asegúrate de que tu repositorio esté alojado en GitHub y de que hayas realizad
 
 ### 6.1) Configuración en Render:
 
+Entrar en render.com y crearse una nueva cuenta de usuario.
+
+Elegir la opción Web Service
+
+Ir al apartado que se encuentra abajo de Public Git repository. 
+
+Copiar y pegar el enlace del repositorio que crearon anteriormente (recuerden que sea público).
+
 Accede a tu cuenta en Render y crea un nuevo servicio.
+
 Configura el servicio para que apunte a tu repositorio de GitHub y especifique el archivo main.py como punto de entrada.
+
+        pip install -r requirements.txt
 
 ### 6.2) Entorno Virtual en Render:
 
-Asegúrate de que Render ejecute los comandos necesarios para activar tu entorno virtual y ejecutar tu aplicación. Esto podría ser algo así como:
+Asegúrate de que Render ejecute los comandos necesarios para activar tu entorno virtual y ejecutar tu aplicación. 
 
-        bash -c "source venv/bin/activate && uvicorn main:app --host 0.0.0.0 --port $PORT"
+El resto de los campos se deben llenar con la misma información que en la imagen:
+
+Esto podría ser algo así como:
+
+        uvicorn main:app --host 0.0.0.0 --port 1000
+
+Seleccionar la opción Create Web Service
 
 ## 7.- Despliegue
 
@@ -209,9 +238,5 @@ Realiza un despliegue manual desde la interfaz de Render o espera a que Render l
 
 Accede a la URL proporcionada por Render para verificar que tu aplicación FastAPI está funcionando correctamente en producción.
 
+Nos va a direccionar a nuestra API. Si les aparece un "Not found", no se preocupen, agreguenle un /docs a su enlace.
 
-
-
-
-> [!Caution]
-> Estos es una nota
