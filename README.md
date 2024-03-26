@@ -111,17 +111,18 @@ Si ya has creado tu entorno virtual, actívalo utilizando el comando correspondi
   > En Windows:
   
     ```
-    API_Recomendacion\Scripts\activate
+    API_Ret\Scripts\activate
     ```
         
   > En sistemas basados en Unix:
   
   ```
-    source API_Recomendacion\bin\activate
+    source API_Ret\bin\activate
   ``` 
 + Se instala FastAPI
 
         pip install "fastapi[all]"
+        pip install (Todas las librerias que se ocupen)
 > [!Tip]
 > Aquí tambien vamos a poder cargar todas las paqueterias que sean necesarias para que funcione nuestro archivo **main.py**, con el comando:
 >     ```pip install nombre_paqueteria```
@@ -153,23 +154,21 @@ Inicializar el servidor de FasAPI.
 > Esta es la estructura general del archivo ***main.py***
 
 ```python
-    from API_Transform import PlayTimeGenre, UserForGenre, UsersRecommend, UsersWorstDeveloper, Sentiment_analysis
-    from fastapi import FastAPI
-    
-    app_recomendacion = FastAPI()
-    
-    # Importacion de funciones: 
-    
-    @app_recomendacion.get("/")
-    def read_root():
-        return {"message": "¡Bienvenido a la API de Recomendaciones!"}
-    
-    @app_recomendacion.get("/playtime-genre/{genero}")
-    def read_playtime_genre(genero: str):
-        result = PlayTimeGenre(genero)
-        return {"result": result}
+from fastapi import FastAPI
+from API_Retencion import Clientes_por_Mes, Mes_mayorClientes, Mes_mayor_abandono, Porcentaje_Retencion_Abandono
+
+app_retencion = FastAPI()
+
+@app_retencion.get("/")
+def read_root():
+    return {"message": "¡Bienvenido a la API de Recomendaciones!"}
+
+@app_retencion.get("/clientes-mes/{mes}")
+def obtener_clientes_por_mes(mes: str):
+    result = Clientes_por_Mes(mes)
+    return {"result": result}
 ```
-> Tenemos un archivo llamado "API_Transform.py" el cual contiene verdaderamente toda la logica de nuestras funciones de consulta de la API
+> Tenemos un archivo llamado "API_Retencion.py" el cual contiene verdaderamente toda la lógica de nuestras funciones de consulta de la API
 
 
   
